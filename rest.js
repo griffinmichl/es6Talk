@@ -1,34 +1,26 @@
 /*
-Rest Parameters
-----------------------------------------
-The rest parameter syntax allows us to represent an indefinite number of arguments as an array
-
+The rest parameter syntax allows us to represent
+an indefinite number of arguments as an array.
 */
 
-function printArgs(a, b, ...c) {
-  console.log(a);
-  console.log(b);
-  console.log(c);
+
+// Instead of:
+function printArrayOfArgsES5() {
+  return Array.prototype.slice.call(arguments)
 }
 
-printArgs(1,2,3,4,5);
-// 1
-// 2
-// [3, 4, 5]
+// We can do:
+function printArrayOfArgsES6(...args) {
+  return args;
+}
 
-function quiz1(a, ...b) {
+function quiz(a, ...b) {
   console.log(b.length);
 }
 
-quiz1(1,2,3,4,5);
+quiz(1,2,3,4,5);
 
-function quiz2(...args) {
-  return args.sort();
-}
-
-quiz2(3,1,2)
-
-function (){
-  var args = Array.prototype.slice.call(arguments, f.length);
-
+// Exercise: Convert this function to es6 using rest parameters
+function sortInputsES5() {
+  return Array.prototype.slice.call(arguments).sort();
 }

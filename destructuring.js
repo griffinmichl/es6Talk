@@ -1,4 +1,9 @@
-// Example
+/*
+The destructuring assignment syntax is a JavaScript
+expression that makes it possible to extract data from
+arrays or objects into distinct variables.
+*/
+
 {
   var module = {
     baz: function() {
@@ -15,8 +20,8 @@
 
   // We can now do...
   var { baz, qux } = module;
-  baz();
-  qux();
+  baz(); // -> 'baz'
+  qux(); // -> 'qux'
 
   // This works for arrays, too!
   var arr = ['foo', 'bar'];
